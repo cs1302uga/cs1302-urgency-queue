@@ -370,7 +370,7 @@ your instructor.
 
 You are responsible for implementing test cases to test your `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` classes. There are
 a few examples of test cases provided in the 
-[`UrgencyQueue` API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparable).
+[`UrgencyQueue` API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html).
 
 Additionally, we have provided oracle classes for both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` that you can 
 instantiate and use in your driver program. The oracle will allow you to run test cases that you write using a trusted 
