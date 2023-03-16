@@ -368,8 +368,6 @@ your instructor.
 
 ## UrgencyQueue Testing
 
-##UPDATE
-
 You are responsible for implementing test cases to test your `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` classes. There are
 a few examples of test cases provided in the 
 [`UrgencyQueue` API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparable).
@@ -383,8 +381,6 @@ implementation of `UrgencyQueue` so you can compare the oracle output to the out
     [`cs1302.oracle.OracleCustomLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleCustomLinkedUrgencyQueue.html). 
 
 ## Submission Instructions
-
-##UPDATE
 
 You will be submitting your project via Odin before the deadline indicated
 near the top of this document. Make sure your project files
@@ -411,8 +407,6 @@ is probably not the best idea.
 
 # Appendix - Project Checklist
 
-##UPDATE
-
 To help you with planning out this project, here are some suggested steps you
 can take that your instructors believe will help you complete the project more
 easily. Some of the items in this checklist may not make sense until you have
@@ -421,7 +415,7 @@ read the entire project description, including the
 These steps are suggesions and, therefore, do not constitute an exhaustive list
 of steps that you may need to take to complete the project.
 
-1. Preparation (Suggested Deadline: Tuesday, Mar 14th):
+1. Preparation (Suggested Deadline: Friday, Mar 17th):
 
    - [ ] Read through the entire project description, including the appendices,
          and **write down questions as you go**.
@@ -435,7 +429,7 @@ of steps that you may need to take to complete the project.
 	   testing your code, you will replace the oracle type with `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
 
-1. Before you write any code (Suggested Deadline: Wednesday, Mar 15th):
+1. Before you write any code (Suggested Deadline: Sunday, Mar 19th):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what
@@ -456,7 +450,7 @@ of steps that you may need to take to complete the project.
 	   start with in the next phase of your development. We'll call these the
 	   independent methods.
 
-1. Prepare to implement the methods (Suggested Deadline: Friday, Mar 17th):
+1. Prepare to implement the methods (Suggested Deadline: Monday, Mar 20th):
 
    - [ ] Create the `.java` files for each implementing class and the common parent (`BaseLinkedUrgencyQueue`) and make sure all classes
          are in the correct package and all entities have the proper visibility. For each file:
@@ -486,7 +480,7 @@ of steps that you may need to take to complete the project.
       * not have to go back and fix as many style errors and/or comments; and
       * have a better understanding of how your class works.
 
-1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Monday, Mar 20).
+1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Tuesday, Mar 21).
    - [ ] Begin with `size`. Since this methods is inherited by the children, we won't need to write
      it in the child classes! Now, go ahead and add the method called `testSize()` to your `QueueTester` class and 
      call it from the `main` method. The code for these methods should look something like the code below:
@@ -514,49 +508,38 @@ of steps that you may need to take to complete the project.
      **Make sure to do one method at a time, fully test it, run `check1302`, and do a proper `git commit` to save your 
      modifications before moving to the next method.**
 
-
-## UPDATE THIS SECTION
-
-1. Implement the methods in the order they are listed below (Suggested Deadline: Wednesday, Mar 22nd)
+1. Implement the methods in the order they are listed below (Suggested Deadline: Thursday, Mar 23rd)
    **check the method detail section for hints and more details about each method before implementing**
    
-   * `BaseStringList`: constructor, `size`, and `isEmpty`
-   * `ArrayStringList`: constructor, `add`, and `get`
-   * `BaseStringList`: `makeString` and `toString`
+   - [ ] `BaseLinkedUrgencyQueue`: constructor, `size`, and `peek`
+   - [ ] `LinkedUrgencyQueue`: constructor and `enqueue`
+   - [ ] `BaseLinkedUrgencyQueue`: `toString`
 
-   Now, you can improve your `ListTester` class by creating objects of type `ArrayStringList`, adding items to it, and printing the list to the console!
-   
+   Now, you can improve your `QueueTester` class by creating objects of type `LinkedUrgencyQueue`, adding items to it, and printing 
+   the queue to the console!
+
    When testing, you should rerun all previous tests and make sure they still work. 
    This iterative process of testing code is sometimes called _regression testing_. 
    You may need to go back and fix a bug in a method you have already written.
-   
-   * `BaseStringList`: `contains` and `add`
-   * `ArrayStringList`: complete the remaining methods in the order they are presented in the UML diagram above. Be sure to compile and test one at a time.
 
-1. Implement `LinkedStringList` (Suggested Deadline: Thursday, Mar 23rd):
-   - [ ] Write the code for the default constructor. You will likely need to introduce
-         instance variables into the class to keep track of object state. This
-	 class stores its elements internally in a way that is different from the other class.
-   - [ ] Complete the remaining methods in the order they are presented in the UML diagram above. 
-         * When it comes time to write tests, if your test methods operate on a `StringList`, then
-	   there is probably very little, if any, changes that you need to make
-	   in order to test the methods in this class.
-	 * Don't forget to `git commit` whenever you get something to work.
-	 * Don't skip using `checkstyle`. If you've been using it as recommended,
-	   you should start to notice how many fewer fixes you're having to make
-	   to keep your code in valid style.
+1. Complete `BaseLinkedUrgencyQueue` (Suggested Deadline: Friday, Mar 24th)
+   - [ ] implement the remaining methods in the order they are presented in the UML diagram above.
+   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving onto the next).
 
-1. Implement `BaseStringList` (Suggested Deadline: Friday, Mar 24th):
-   - [ ] Now that you have `ArrayStringList` and `LinkedStringList` working, it will likely be easier to understand how to
-      write the remaining methods in `BaseStringList`. While writing each method, be sure to use the
-      methods you implemented in the children where appropriate. The beauty of having the abstract parent is that we only have to write
-      these methods once and they will work on objects of any child type! Remember, the parent class does not need to understand
-      the underlying data structure (array) in this case. It just needs to call the appropriate methods to
-      implement its actions.
-   - [ ] Test, run `checkstyle`, and commit often while working on these methods.
+1. Complete `LinkedUrgencyQueue` (Suggested Deadline: Sunday, Mar 26th)
+   - [ ] implement the remaining methods in the order they are presented in the UML diagram above. 
+   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving onto the next).
 
-1. Final Run-through (Suggested Deadline: Monday, Mar 27th):
-   - [ ] Thoroughly test all of your methods on objects of both `ArrayStringList` and `LinkedStringList`.
+1. Implement `CustomLinkedUrgencyQueue` (Suggested Deadline: Tuesday, Mar 28th):
+   - [ ] Write the code for the constructor.
+   - [ ] implement the remaining methods in the order they are presented in the UML diagram above.
+         * When it comes time to write tests, if your test methods operate on an `UrgencyQueue` variable, then
+	   there is probably very little, if any, changes that you need to make in order to test the methods in 
+	   this class.
+   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving onto the next).
+
+1. Final Run-through (Suggested Deadline: Thursday, Mar 30th):
+   - [ ] Thoroughly test all of your methods on objects of both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
    - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
          the checkstyle audit.
@@ -564,28 +547,6 @@ of steps that you may need to take to complete the project.
 **We very much appreciate any and all feedback you might have for this section.**
 Please don't hesitate to send us a private Piazza message with suggestions on
 how to make it better after you complete your project.
-
-# Appendix - FAQ
-
-Below are some frequently asked questions related to this project.
-
-1. **Why doesn't `{@inheritDoc}` seem to work (and other Javadoc-related questions)?**
-
-   It doesn't work because the `javadoc` tool requires the source code in order to automatically
-   pull the text of comments from supertypes when applicable. **We did not provide you with the
-   source code for the interface,** so this is working as intended.
-
-   **SUGGESTION:** <a id="javadoc-comments"> **Do NOT manually copy the entire comment and parameter details from the API website.**
-   Instead, include a summary sentence and `{@inheritDoc}` to make it clear to readers of the source
-   code that your intent is to inherit the documentation. An example of this can be found in the
-   style guide, [here](https://github.com/cs1302uga/cs1302-styleguide#missingjavadocmethod).
-
-1. **<a id="java-util-Arrays"/>Is the `java.util.Arrays` class allowed?**
-
-   **No**, this violates [a requirement](#no-java-util-arrays); instead, you should write your
-   own version of the method you want to use. Most of the methods that you think you might need
-   from that class can be written in 6 lines of code or less (often much less), and writing your
-   own version will serve as some much needed practice.
 
 Have a question? Please post it on the course Piazza.
 
