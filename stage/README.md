@@ -63,7 +63,7 @@ In accordance with this notice, I must caution you **not** to
 fork this repository on GitHub if you have an account. Doing so will more than
 likely make your copy of the project publicly visible. Please follow the instructions contained
 in the [How to Download the Project](#how-to-download-the-project)
-section below in order to do your development on odin. Furthermore, you must adhere
+section below in order to do your development on Odin. Furthermore, you must adhere
 to the copyright notice and licensing information at the bottom of this document.
 
 ## Updates
@@ -75,20 +75,16 @@ command while inside of your project directory.
 ## Project Description
 
 In this project, you will be providing two different implementations of
-an `UrgencyQueue` interface, which defines different operations that one
-should be able to do with a queue of items ordered by their urgency. 
+the `UrgencyQueue` interface, which defines different operations that one
+should be able to do with a queue of items ordered by their relative level
+of urgency. 
 
-## UPDATE Paragraph - Make consistent with the Javadoc
-
-A list is simply an object that represents
-an ordered collection of elements. The list implementation can decide how the
-elements are stored internally so long as users are able to interact with
-those elements via the methods defined in the interface. In this way, a list
-is an example of an *abstract data type* (ADT). To put it another way: while
-the implementor needs to understand the specific details of the implementation
-(in order to write the code to make it happen), the user of a list does not.
-The users simply interact with objects of the list implementation through
-the methods defined in the interface.
+An urgency queue is an abstract data type that defines urgency-based queue operations.
+From an external (user) perspective, each urgency queue object maintains a "line" of
+zero or more *items* (non-null references to objects of the appropriate type). Unlike a 
+standard queue, which orders its "line" of items according to FIFO (first-in-first-out)
+semantics, an urgency queue associates a *level of urgency* with each item and orders
+its items according to their relative level of urgency.
 
 Each implementation of the `UrgencyQueue` interface will be a concrete class with specific functional
 and non-functional requirements. These classes need to implement `UrgencyQueue` via a common abstract
@@ -96,7 +92,8 @@ parent class.
 
 For this project, you will *NOT* have access to the `.java` files for the
 interface. Instead, you will have access to the generated API documentation
-for the [`UrgencyQueue` interface](https://webwork.cs.uga.edu/~mepcott/cs1302-urgency-queue/)(may require VPN connection to view).
+for the [`UrgencyQueue` interface](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html)
+(may require VPN connection to view).
 Implementors should make sure that each method functions or behaves as described
 by the interface's API documentation.
 
@@ -112,6 +109,7 @@ contains some suggestions on how to work through the project from start to finis
 
 ### Required Prerequisite Reading
 
+* [1302 Generic Classes Reading] (https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/generics/generic-classes/generic-classes.md)
 * [1302 Generic Methods Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/generics/generic-methods/generic-methods.md)
 * [1302 Lambda Expressions Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/lambda/lambda.rst)
 * [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html)
@@ -124,9 +122,6 @@ highest possible grade is 110 (due to extra credit).
 
 ### Functional Requirements
 
-## UPDATE - include that they shouldn't modify the parts of the code that were given (class declarations/constructor signatures)
-## They have to implement: GenNode, BaseLinkedUrgencyList, LinkedUrgencyList, CustomLinkedUrgencyList
-
 A functional requirement is *added* to your point total if satisfied.
 There will be no partial credit given for visual inspection of your code.
 Points are assigned for each test case that executes properly.
@@ -134,98 +129,99 @@ Points are assigned for each test case that executes properly.
 For this project, you are required to create two different classes that
 implement the same interface via a common abstract parent. While the specific
 details are listed later in this document, the following diagram illustrates the
-general relationship between your classes and the interface. The package `cs1302.adt`
-is provided for you in the `cs1302-str-list.jar` file which is included in the download for the
+general relationship between your classes and the interface. The package `cs1302.gen`
+is provided for you in the `cs1302-urgency-queue.jar` file which is included in the download for the
 project (details later). You do not have access to the source
-code for classes in `cs1302.adt`. However, you do have access to the _byte code_ and the API
-documentation website. You will need to use both `StringList` and `Node` in your code since `BaseStringList`
-depends on `StringList` (it implements it) and `LinkedStringList` depends on `Node`.
+code for classes in `cs1302.gen`. However, you do have access to the _byte code_ and the API
+documentation website. You will need to use both `UrgencyQueue` and `Node` in your code since 
+`BaseLinkedUrgencyQueue` depends on `UrgencyQueue` and `Node`.
 
 <img alt="UML Diagram" src="ProjectDiagram.svg" align="center">
 
 The specific requirements for each class are presented below (See the [Suggested Checklist](#appendix---suggested-checklist)
 for the suggested order of implementation).
 
-* **`BaseStringList`:** Create the abstract `cs1302.p2.BaseStringList` class such that it properly
-  implements a subset of the abstract methods of `StringList`. Since `BaseStringList` is abstract, it is
-  not mandatory to implement all methods of `StringList` within this class. The exact list of methods this class
-  must implement are listed in the method section for `BaseStringList` in the provided UML diagram above.
-  Remember, since `BaseStringList` is an abstract parent to both `ArrayStringList` and `LinkedStringList`,
-  its methods must be implemented without reference to the underlying data structure. In other words,
-  **within `BaseStringList`, you cannot use arrays or nodes**. The code contained in this class must be
-  general enough to work with both.
+* **`BaseLinkedUrgencyQueue`:** Create the abstract `cs1302.p3.BaseLinkedUrgencyQueue` class such that it properly
+  implements a subset of the abstract methods in the `UrgencyQueue` interface. Since `BaseLinkedUrgencyQueue` is abstract, it is
+  not mandatory to implement all methods of `UrgencyQueue` within this class. The exact list of methods this class
+  must implement are listed in the method section for `BaseLinkedUrgencyQueue` in the provided UML diagram above.
+  Since both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` use a linked list data structure, it is appropriate
+  to have `head` as an instance variable of the `BaseLinkedUrgencyQueue` class.
 
-  * **Note:** The methods that are listed in the UML diagram in `BaseStringList` must be implemented
-    in that class. You are not allowed to move any of them into `ArrayStringList` or `LinkedStringList`.
-    You may, however, find that you can more one or more methods from `ArrayStringList` and `LinkedStringList`
-    up into `BaseStringList`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
+  * **Note:** The methods that are listed in the UML diagram in `BaseLinkedUrgencyQueue` must be implemented
+    in that class. You are not allowed to move any of them into either of the chld classes.
+    You may, however, find that you can more one or more methods from `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`
+    up into `BaseLinkedUrgencyQueue`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
     move up only has to be written once! However, accomplishing this will require some thought. We hope that
-    all of you spend some time trying to ensure that `ArrayStringList` and `LinkedStringList` only contain the
-    methods that absolutely need to be implemented in the child classes!
+    all of you spend some time trying to move additional methods up to `BaseLinkedUrgencyQueue`.
 
-* **`ArrayStringList`:** Create the `cs1302.p2.ArrayStringList` class such
-  that it properly extends `cs1302.p2.BaseStringList` and fully implements
-  the `cs1302.adt.StringList` interface with additional requirements listed below.
+* **`LinkedUrgencyQueue`:** Create the `cs1302.p3.LinkedUrgencyQueue` class such
+  that it properly extends `cs1302.p3.BaseLinkedUrgencyQueue` and fully implements
+  the `cs1302.gen.UrgencyQueue` interface with additional requirements listed below.
 
-  * You must explicitly define and document a default constructor for this class.
-    The initial size of an `ArrayStringList` is `0` regardless of the list's
-    underlying storage--remember, the list's internal storage and the list
-    itself are two different things. Here is the signature:
+  * The `LinkedUrgencyQueue` implementation of `UrgencyQueue` uses a linked list of `Node` objects to maintain its 
+    queue ("line") of items and imposes a 
+    [`Comparable` Upper Bound](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparable) 
+    so that it can compare items. Since each item is compatible with the generic type parameter, `Type`, and `Type` is 
+    required to implement `Comparable<Type>`, this class is able to directly determine the relative level of urgency 
+    between two items using the natural ordering defined by the item type's compareTo(Type) method.
+    
+  * The starter code for `LinkedUrgencyQueue` contains the class declaration and along with the signature for the default 
+    constructor. You are not allowed to change the class declaration or the signature of the constructor.
+    
+    Here is the class declaration:
+    
+    ```java
+    public class LinkedUrgencyQueue<Type extends Comparable<Type>> implements UrgencyQueue<Type> {
+    ```
+    
+    Here is the signature for the constructor:
 
     ```java
-    public ArrayStringList();
+    public LinkedUrgencyQueue()
     ```
-
-<!--  * You must explicitly define and document a copy constructor for this class.
-    It should make the new list a deep copy of the other list. Therefore, the initial
-    size and element values of the new list should be the other list. The other
-    list can be any implementation of the `StringList` interface. Here is
-    the signature:
-
-    ```java
-    public ArrayStringList(StringList other);
-    ```
--->
-
-  * Over the lifetime of an `ArrayStringList` object, its internal storage may
-    change in order to accomodate more list elements. When your code increases
-    the size of an `ArrayStringList` object's internal array storage,
-    **you should actively avoid: i) increasing the array size by one; and ii)
-    doubling the size of the array.** Increasing by one is wasteful as it requires making
-    a new array and copying over all elements every time an item is added. Doubling the size
-    of the array may be wasteful at large sizes as there may be many indeces that contain `null`.
-    Somewhere in between is more reasonable (increasing by 50%? increasing by 25%? We'll leave
-    the details up to you). Furthermore, **you should not set the initial array size to `0` or to the
-    largest number that is allowed.**
-
+    
   * There is a requirement related to this class's storage included
     in the [Absolute Requirements](#absolute-requirements) section.
 
-* **`LinkedStringList`:** Create the `cs1302.p2.LinkedStringList` class such
-  that it properly extends `cs1302.p2.BaseStringList` and fully implements
-  the `cs1302.adt.StringList` interface with additional requirements listed below.
+* **`CustomLinkedUrgencyQueue`:** Create the `cs1302.p3.CustomLinkedUrgencyQueue` class such
+  that it properly extends `cs1302.p3.BaseLinkedUrgencyQueue` and fully implements
+  the `cs1302.gen.UrgencyQueue` interface with additional requirements listed below.
 
-  * You must explicitly define and document a default constructor for this class.
-    The initial size of a `LinkedStringList` is `0` regardless of the list's
-    underlying storage--remember, the list's internal storage and the list
-    itself are two different things. Here is the signature:
+  * The `CustomLinkedUrgencyQueue` implementation of `UrgencyQueue` uses a lnked list of `Node` objects to maintain its
+    queue ("line") of items and requires a 
+    [Comparator Constructor Parameter](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparator) 
+    so that it can compare items. Although the generic type parameter, `Type`, does not have any explicit upper-bound 
+    requirements, this class is still able to determine the relative level of urgency between two items using the 
+    ordering imposed by the comparator supplied to the constructor (i.e., it uses comparator's `compare(Type, Type)` method).
+  
+  * The starter code for `CustomLinkedUrgencyQueue` contains the class declaration and along with the signature for the 
+    one-parameter constructor. You are not allowed to change the class declaration or the signature of the constructor.
+    
+    Here is the class declaration:
+    
+    ```java
+    public class CustomLinkedUrgencyQueue<Type> implements UrgencyQueue<Type> {
+    ```
+    
+    Here is the signature for the constructor:
 
     ```java
-    public LinkedStringList();
+    public CustomLinkedUrgencyQueue(Comparator<Type> cmp) {
     ```
-        
+
+
   * There is a requirement related to this class's storage included
     in the [Absolute Requirements](#absolute-requirements) section.
 
 * **(100 points) Test Cases**: The bulk of this project will be graded
-  based on 50 or more test cases, each worth the same amount of points.
+  based on 50 or more test cases, each likely worth the same amount of points.
   This is the same as someone using the classes you wrote based purely on
   the interface definitions. If you implement the interface correctly,
   then you should pass the associated test cases.
 
 ### Non-Functional Requirements
 
-##UPDATE
 A non-functional requirement is *subtracted* from your point total if
 not satisfied. In order to emphasize the importance of these requirements,
 non-compliance results in the full point amount being subtracted from your
@@ -259,8 +255,6 @@ point total. That is, they are all or nothing.
 
 ### Absolute Requirements
 
-##UPDATE
-
 An absolute requirement is similar to a non-functional requirement, except that violating
 it will result in an immediate zero for the assignment. In many cases, a violation
 will prevent the graders from evaluating your functional requirements. No attempts will be
@@ -268,33 +262,33 @@ made to modify your submission to evaluate other requirements.
 
 * **Project Directory Structure:** <a id="struct"/>The location of the default
   package for the source code should be a direct subdirectory of
-  `cs1302-str-list` called `src`. When the project is compiled,
+  `cs1302-urgency-queue` called `src`. When the project is compiled,
   the `-d` option should be used with `javac` to make the default package
-  for compiled code a direct subdirectory of `cs1302-str-list`
+  for compiled code a direct subdirectory of `cs1302-urgency-queue`
   called `bin`.
 
   If you follow this structure, then you would type the following to compile
-  `BaseStringList.java` to the `bin` directory, assuming you are in the top-level project
-  directory `cs1302-str-list`:
+  `BaseLinkedUrgencyQueue.java` to the `bin` directory, assuming you are in the top-level project
+  directory `cs1302-urgency-queue`:
 
   ```
-  $ javac -d bin -cp cs1302-str-list.jar src/cs1302/p2/BaseStringList.java
+  $ javac -d bin -cp cs1302-urgency-queue.jar src/cs1302/p3/BaseLinkedUrgencyQueue.java
   ```
 
   Remember, when you compile `.java` files individually, there might be
   dependencies between the files. In such cases, the order in which you
   compile the code matters. Also, if more than one default package is needed
-  (e.g., `cs1302-str-list.jar` and some other directory like `bin`), then a colon `:`
+  (e.g., `cs1302-urgency-queue.jar` and some other directory like `bin`), then a colon `:`
   can be used to separate each path in a list of multiple paths supplied
-  to `-cp` (e.g., `-cp cs1302-str-list.jar:bin`). Since `ArrayStringList` and `LinkedStringList`
-  depend on files in `cs1302-str-list.jar` and `BaseStringList` (in `bin`), we need
+  to `-cp` (e.g., `-cp cs1302-urgency-queue.jar:bin`). Since `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`
+  depend on files in `cs1302-urgency-queue.jar` and `BaseLinkedUrgencyQueue` (in `bin`), we need
   both to be on the classpath as follows:
 
   ```
-  $ javac -cp bin:cs1302-str-list.jar -d bin src/cs1302/p2/ArrayStringList.java
-  $ javac -cp bin:cs1302-str-list.jar -d bin src/cs1302/p2/LinkedStringList.java
+  $ javac -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/LinkedUrgencyQueue.java
+  $ javac -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/CustomLinkedUrgencyQueue.java
   ```
-
+  
 * __Development Environment:__ This project must *must compile and run* 
   correctly on Odin using the specific version of Java enabled by the 
   CSCI 1302 shell profile.
@@ -306,47 +300,29 @@ made to modify your submission to evaluate other requirements.
   compilation dependencies. **You should remove any `.java` files that you
   do not need before submission.**
 
-* **`cs1302.p2.ArrayStringList` Storage Requirement:**
-  You must use a basic Java array for this class's storage. The initial
-  size of the array does not have to be the same size as the initial size
-  of the list. Whenever the size of the list is about to exceed the size
-  of its array, the list should dynamically allocate a new array of a larger
-  size and copy the contents over--please consider writing and documenting
-  a private support method to do this. If you use Java's `java.util.ArrayList`
-  class or something similar (e.g., a class that implements `java.util.Collection`), 
-  then that will result in an immediate violation
-  of this non-functional requirement, regardless of any use of a regular
-  array elsewhere in the class. This requirement also prohibits any use of
-  third-party implementations of list or list-like interfaces.
-
-* **`cs1302.p2.LinkedStringList` Storage Requirement:**
-  You must use a sequence of `cs1302.adt.StringList.Node` objects
-  for this class's storage. Unlike the array-based implementation in
-  `ArrayStringList`, this type of storage is not limited to the number
-  of elements that can fit into an array (because there is no underlying array).
-  Instead, it's limited only by the available memory for the Java program
-  using the `LinkedStringList` object.
-  If you use Java's `java.util.LinkedList` class or something similar 
-  (e.g., a class that implements `java.util.Collection`), then that
-  will result in an immediate violation of this non-functional requirement,
+* **Storage Requirement:**
+  You must use a sequence of `cs1302.gen.Node` objects
+  for this class's storage. If you use Java's `java.util.LinkedList` class 
+  or something similar (e.g., a class that implements `java.util.Collection`), 
+  then that will result in an immediate violation of this non-functional requirement,
   regardless of any use of any `Node` objects elsewhere in the class.
   This requirement also prohibits any use of third-party implementations
   of list or list-like interfaces.
 
 * **No Implementation Dependencies:** <a id="no-impl-deps"/>You are not permitted to use one
-  implementation of the `StringList` interface in another implementation.
-  For example, you cannot use the `ArrayStringList` class inside of your
-  `LinkedStringList` class or vise versa. Additionally, `BaseStringList`
-  cannot depend on either of the `StringList` implementations, however,
-  it can (and should) depend on the `StringList` interface itself. If you have any
+  implementation of the `UrgencyQueue` interface in another implementation.
+  For example, you cannot use the `LinkedUrgencyQueue` class inside of your
+  `CustomLinkedUrgencyQueue` class or vise versa. Additionally, `BaseLinkedUrgencyQueue`
+  cannot depend on either of its children, however,
+  it can (and should) depend on the `UrgencyQueue` interface itself. If you have any
   questions about this, then please ask your instructor.
 
   You can check this using the `jdeps` tool. Inspect the output of
   the command below after everything is compiled. You don't want to see
-  `ArrayStringList` pointing to `LinkedStringList` or vise-versa.
+  `LinkedUrgencyQueue` pointing to `CustomLinkedUrgencyQueue` or vise-versa.
 
   ```
-  $ jdeps -v -cp cs1302-str-list.jar bin
+  $ jdeps -v -cp cs1302-urgency-queue.jar bin
   ```
 
 * **No `java.util.Arrays` Dependency:** <a id="no-java-util-arrays"/>You
@@ -367,8 +343,6 @@ available before the project deadline. You can test your implementations yoursel
 via interface polymorphism.
 
 ## How to Download the Project
-
-##UPDATE
 
 On Odin, execute the following terminal command in order to download the project
 files into sub-directory within your present working directory:
@@ -392,52 +366,21 @@ $ git pull
 If you have any problems with these download procedures, then please contact
 your instructor.
 
-## ListADT Testing
+## UrgencyQueue Testing
 
 ##UPDATE
 
-You are responsible for implementing test cases to test your `ArrayStringList` and `LinkedStringList` classes. There are
-a few examples of test cases provided in the checklist and FAQ sections below.
+You are responsible for implementing test cases to test your `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` classes. There are
+a few examples of test cases provided in the 
+[`UrgencyQueue` API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparable).
 
-Additionally, we have provided an oracle class (`cs1302.oracle.OracleStringList`) that you can instantiate and use
-in your driver program. The oracle will allow you to run test cases that you write using a trusted implementation of
-`StringList` so you can compare the oracle output to the output of your `StringList` implementations.
-
-Here is an example `Driver` class that us set up to run the test cases with all three implementation. You would just need
-to uncomment the implementation you wanted to use:
-
-```java
-package cs1302.p2;
-
-import cs1302.adt.StringList;
-import cs1302.oracle.OracleStringList;
-
-public class Driver {
-    public static void main(String[] args) {
-        StringList sl;
-
-        // To test what the output is for your code, you can use ArrayStringList or LinkedStringList:
-	// sl = new OracleStringList(); // uncomment to run the test cases using the oracle.
-	// sl = new ArrayStringList(); // uncomment to run the test cases using your array implementation
-	// sl = new LinkedStringList(); // uncomment to run the test cases using your linked implementation.
-
-        // Test isEmpty on an empty list
-        if (sl.isEmpty()) {
-            System.out.println("isEmpty: Test Passed");
-        } else {
-            System.out.println("isEmpty: Test Failed");
-            System.exit(0);
-        } // if
-
-	// more calls to test methods down here...
-    } // main
-
-} // Driver
-```
-
-We have also provided images showing how various method calls on both `ArrayStringList` and `LinkedStringList`
-objects from a driver program will impact the underlying instance variables of each. You can find those examples
-in the [ADT and Links Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/adt-and-links/adt-and-links.md#list-adt---examples-with-both-implementations).
+Additionally, we have provided oracle classes for both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` that you can 
+instantiate and use in your driver program. The oracle will allow you to run test cases that you write using a trusted 
+implementation of `UrgencyQueue` so you can compare the oracle output to the output of your `UrgencyQueue` implementations.
+  * The oracle implementation of `LinkedUrgencyQueue` is provided in the 
+    [`cs1302.oracle.OracleLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleLinkedUrgencyQueue.html). 
+  * The oracle implementation of `CustomLinkedUrgencyQueue` is provided in the 
+    [`cs1302.oracle.OracleCustomLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleCustomLinkedUrgencyQueue.html). 
 
 ## Submission Instructions
 
@@ -473,7 +416,8 @@ is probably not the best idea.
 To help you with planning out this project, here are some suggested steps you
 can take that your instructors believe will help you complete the project more
 easily. Some of the items in this checklist may not make sense until you have
-read the entire project description, including the [FAQ](#appendix---faq).
+read the entire project description, including the 
+[API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html).
 These steps are suggesions and, therefore, do not constitute an exhaustive list
 of steps that you may need to take to complete the project.
 
@@ -481,22 +425,22 @@ of steps that you may need to take to complete the project.
 
    - [ ] Read through the entire project description, including the appendices,
          and **write down questions as you go**.
-   - [ ] Read through the entire API Documentation for the classes in the `cs1302.adt` package linked below:
-   - [ ] [`cs1302.adt.Node`](https://webwork.cs.uga.edu/~mepcott/cs1302-str-list/cs1302/adt/Node.html)
-   - [ ] [`cs1302.adt.StringList`](https://webwork.cs.uga.edu/~mepcott/cs1302-str-list/cs1302/adt/StringList.html)
+   - [ ] Read through the entire API Documentation for the classes in the `cs1302.gen` package linked below:
+   - [ ] [`cs1302.gen.Node`](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/Node.html)
+   - [ ] [`cs1302.gen.UrgencyQueue`](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html)
 	 * Be sure to read everything up to the "Method Details" section. That section is important but will make more
 	   sense later - you will want to reference it when you are ready to start writing code.
 	 * Carefully trace through any code examples that are given. These will help you understand how your
-	   class will be used. In the examples, the object created is of type `OracleStringList`. When you are
-	   testing your code, you will replace `OracleStringList` with `ArrayStringList` and `LinkedStringList`.
+	   class will be used. In the examples, the object created of one of the oracle types. When you are
+	   testing your code, you will replace the oracle type with `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
 
 1. Before you write any code (Suggested Deadline: Wednesday, Mar 15th):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what
-	 would occur if the driver program executed the line `sl.contains(1, "end")` on a preexisting object of
-	 a class that implements `StringList`? Use the code examples in the documentation to get you started.
+	 would occur if the driver program executed the line `queue.enqueue("end")` on a preexisting object of
+	 a class that implements `UrgencyQueue`? Use the code examples in the documentation to get you started.
    - [ ] For each method in the interface, try to write down what you
          think the basic steps need to be in order to produce the desired outcome.
 	 * Try to keep it high level. If the steps that you write down sound like they
@@ -505,14 +449,6 @@ of steps that you may need to take to complete the project.
 	   then you might introduce that as a _private_ or _protected_ helper method.
 	   Using existing methods can greatly cut down the amount of code you need
 	   to write and will minimize the number of bugs in your code.
-	 * Here is an example: If there are multiple methods that have a step that
-	   gets an element from a specific index in the list, then you might have
-	   that method call the list's [`get`](https://webwork.cs.uga.edu/~mepcott/cs1302-str-list/cs1302/adt/StringList.html#get(int))(may require VPN
-	   connection to view) 
-	   method instead of directly accessing the underlying data structure (array or linked list) which
-	   might require writing the same loop multiple times.
-	 * Consider drawing out diagrams similar to the diagrams to the provided
-	 [Examples](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/adt-and-links/adt-and-links.md#list-adt---examples-with-both-implementations).
    - [ ] Based on the previous suggestion, draw out what the method dependencies
          are for each method (i.e., what method depends on what). If you notice
 	 any circular dependencies, then those should be eliminated.
@@ -522,56 +458,44 @@ of steps that you may need to take to complete the project.
 
 1. Prepare to implement the methods (Suggested Deadline: Friday, Mar 17th):
 
-   - [ ] Create the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
+   - [ ] Create the `.java` files for each implementing class and the common parent (`BaseLinkedUrgencyQueue`) and make sure all classes
          are in the correct package and all entities have the proper visibility. For each file:
-	 * Write the class signature (top-level declaration) and all of the method signatures (member-level declarations). Remember, in the child
-	   classes (`ArrayStringList` and `LinkedStringList`), you don't need to include method signatures for inherited methods that aren't overridden
-	   in the child classes.
-	 * In the body of each method, throw an `UnsupportedOperationException` as suggested
-	   in [the FAQ](#faq-uoe). **Do not attempt to actually implement the method yet.**
+	 * Write all of the method signatures (member-level declarations). Remember, in the child
+	   classes (`LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`), you don't need to include method signatures for 
+	   inherited methods that aren't overridden in the child classes.
+	 * In the body of each method, throw an `UnsupportedOperationException`. 
+	   **Do not attempt to actually implement the method yet.**
 	 * Run `checkstyle` to make sure that you're off to a good start, style-wise.
 	   **Yes, this includes Javadoc comments;** read [this](https://github.com/cs1302uga/cs1302-styleguide/blob/master/README.md#missingjavadocmethod)
 	   for a recommended way to handle the inherited documentation.
 	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
 	   compilation in the future. This will make it easier to test/debug your code.
-   - [ ] Create a class called `cs1302.test.ListTester` and add any code snippets found in the API documentation for the `cs1302.adt` package.
-         Place each code snippet in its own method with an appropriate name. Then, create a `main` method in `ListTester` that calls
-	 the methods you just created. If everything is set up properly, all of the tests should pass because `OracleStringList` is a working
-	 implementation of the `StringList` interface. Now, you will have your testing environment set up and you will be able to 
-	 seamlessly plug in your implementations of `StringList` to test the functionality.
+   - [ ] Create a class called `cs1302.test.QueueTester` and add any code snippets found in the API documentation for the `cs1302.gen` package.
+         Place each code snippet in its own method with an appropriate name. Then, create a `main` method in `QueueTester` that calls
+	 the methods you just created. If everything is set up properly, all of the tests should pass because the oracle code provides working
+	 implementations of the `UrgencyQueue` interface. Now, you will have your testing environment set up and you will be able to 
+	 seamlessly plug in your implementations of `UrgencyQueue` to test the functionality.
 	 
-   - [ ] If you haven't already done so, make a script to compile all of the classes and run your `ListTester` class. At this point, you will
+   - [ ] If you haven't already done so, make a script to compile all of the classes and run your `UrgencyQueue` class. At this point, you will
          likely see an `UnsupportedOperationException`. That's okay. Those will go away as we start implementing the method bodies.
    
-   At this point, you should have the complete environment set up with templates for each class you will implement (`ArrayStringList` and
-   `LinkedStringList`) along with a simple tester program. If you take the first three checkpoints seriously, then you will be able to:
+   At this point, you should have the complete environment set up with templates for each class you will implement (`LinkedUrgencyQueue` and
+   `CustomLinkedUrgencyQueue`) along with a simple tester program. If you take the first three checkpoints seriously, then you will be able to:
       * write less code for each method and over all;
       * identify and fix bugs faster;
       * not have to go back and fix as many style errors and/or comments; and
       * have a better understanding of how your class works.
 
-1. <a id="tests"/>Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Monday, Mar 20).
-   - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write
-     them in `ArrayStringList` or `LinkedStringList`! Now, go ahead and add methods called `testIsEmpty()` and `testSize()` to your
-     `ListTester` class and call them from the `main` method. The code for these methods should look something like the code below:
+1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Monday, Mar 20).
+   - [ ] Begin with `size`. Since this methods is inherited by the children, we won't need to write
+     it in the child classes! Now, go ahead and add the method called `testSize()` to your `QueueTester` class and 
+     call it from the `main` method. The code for these methods should look something like the code below:
 
      ```java
-     public static void testIsEmpty() {
-        StringList sl = new ArrayStringList();
-
-        // Testing isEmpty on an empty list
-        if (sl.isEmpty()) {
-            System.out.println("isEmpty: Test Passed");
-        } else {
-            System.out.println("isEmpty: Test Failed");
-            System.exit(0);
-        } // if
-     } // testIsEmpty
-
      public static void testSize() {
-        StringList sl = new ArrayStringList();
-        // Testing size on an empty list
-        if (sl.size() == 0) {
+        Queue<Integer> queue = new LinkedUrgencyQueue<Integer>();
+        // Testing size on an empty queue
+        if (queue.size() == 0) {
             System.out.println("size: Test Passed");
         } else {
             System.out.println("size: Test Failed");
@@ -579,19 +503,19 @@ of steps that you may need to take to complete the project.
         } // if
      } // testSize
      ```
-
-     If you want to avoid rewriting the above methods for `LinkedStringList`, think about how you can modify the input parameters and
-     use polymorphism to avoid duplicating this code.
      
-     If you've done everything properly so far, this should run and print two "Test Passed" messages to the console. The code above contains two
-     possible test cases that we could run when grading your program. Your `ListTester` class should already contain simple tests for some of the
-     other methods in the `StringList` interface.
+     If you've done everything properly so far, this should run and print a "Test Passed" message to the console. The code above contains a
+     possible test case that we could run when grading your program.
 
-     At this point, you should have the basic foundation for your program done including skeleton code, a compile script, and a good understanding
-     of what all of the methods do (and how they do them). As you move forward, we
+     At this point, you should have the basic foundation for your program done including skeleton code, a compile script, 
+     and a good understanding of what all of the methods do (and how they do them). As you move forward, we
      recommend completing the methods in the order described below. 
      
-     **Make sure to do one method at a time, fully test it, run `check1302`, and do a proper `git commit` to save your modifications before moving to the next method.**
+     **Make sure to do one method at a time, fully test it, run `check1302`, and do a proper `git commit` to save your 
+     modifications before moving to the next method.**
+
+
+## UPDATE THIS SECTION
 
 1. Implement the methods in the order they are listed below (Suggested Deadline: Wednesday, Mar 22nd)
    **check the method detail section for hints and more details about each method before implementing**
@@ -638,124 +562,18 @@ of steps that you may need to take to complete the project.
          the checkstyle audit.
 
 **We very much appreciate any and all feedback you might have for this section.**
-Please don't hesitate to send us a private piazza message with suggestions on
+Please don't hesitate to send us a private Piazza message with suggestions on
 how to make it better after you complete your project.
 
 # Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
 
-1. **<a id="faq-uoe"/>Can I technically implement the methods first before I implement them correctly?**
-
-   You may wish to write out the method signatures for the methods you are
-   implementing from the interface with empty bodies in an attempt to get started.
-   You will quickly discover that the methods that have a non-void return
-   value actually need to return something. If you don't put a return statement,
-   then this complicates trying to compile and test one method at a time.
-
-   It is possible to _temporarily_ include a `throw` statement in the method
-   until you commit to writing the return statement. I reccommend throwing
-   an instance of [`UnsupportedOperationException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html)
-   if you choose to do this. For example, you might write something like this for the `get(int)`
-   method:
-
-   ```java
-   public String get(int index) {
-       throw new UnsupportedOperationException("not yet implemented");
-   } // get
-   ```
-
-1. **<a id="test-exceptions"/>How can I test that my methods throw the exceptions?**
-
-   In this project, you're not explicitly tasked with handling exceptions; instead, you're
-   tasked with making sure that they happen when they're supposed to happen. When testing
-   your methods, you will want to make sure that one of things you check is that your
-   methods do, in fact, throw the exceptions when they're expected to per the API documentation.
-
-   Here is an example of a test method you might write to test whether or not your `add(int, String)`
-   method thows an `IndexOutOfBoundsException` when a negative value is supplied for the `index`
-   parameter:
-
-   ```java
-   public static void testAddNegative(StringList list) {
-       System.out.print("testAddNegative: ");
-       try {
-           list.add(-5, "hello");
-           System.out.println("FAIL: expected IOOB; however, no exception was encountered");
-       } catch (IndexOutOfBoundsException ioob) {
-           System.out.println("PASS: expected IOOB; IOOB was encountered");
-       } catch (Throwable e) {
-           System.out.println("FAIL: expected IOOB, but got " + e);
-       } // try
-   } // testAddNegative
-   ```
-
-   In a driver class that you create for testing, you might write something similar to
-   the following in a method somewhere:
-
-   ```java
-   System.out.println("ARRAY STRING LIST TESTS");
-   StringList asl = new ArrayStringList();
-   testAddNegative(asl);
-
-   System.out.println("LINKED STRING LIST TESTS");
-   StringList lsl = new LinkedStringList();
-   testAddNegative(lsl);
-   ```
-
-   We reccommend that you further break up your test code into methods in order to
-   reduce the redundancy you see in the example above. Your test code does not need
-   to look like what we provided; it's just an illustrative example.
-
-1. **What is `cs1302-str-list.jar`?**
-
-   In Java, `.jar` files are Java™ Archive (JAR) files that bundle multiple files into a single
-   compressed file. Typically a JAR file contains the package directories and `.class` files
-   for a library. This is just like the `bin` directory that you are used to, except it's all
-   bundled into a single file. For example, the `cs1302-str-list.jar` file contains the package directories
-   and `.class` files for `cs1302.adt.StringList`. If you are in the same directory as
-   `cs1302-str-list.jar`, then you can use the following command to take peek into the archive:
-
-   ```
-   $ jar -tf cs1302-str-list.jar
-   ```
-
-   You should notice that the top-level directory in the JAR file is `cs1302`, which means that
-   the JAR file itself can serve as the default package for compiled code--this is why we
-   use with `-cp` in examples given elsewhere in this project description.
-
 1. **Why doesn't `{@inheritDoc}` seem to work (and other Javadoc-related questions)?**
 
    It doesn't work because the `javadoc` tool requires the source code in order to automatically
    pull the text of comments from supertypes when applicable. **We did not provide you with the
    source code for the interface,** so this is working as intended.
-
-   <!--
-   **However,** you can use the
-   `javadoc1302` command (only available on Odin) along with the `--StringList.java` option
-   instead of the usual `javadoc` command to give the Javadoc tool access to the source code
-   it needs to inherit the documentation.
-
-   An example of the `javadoc1302` command is provided below; see the note below the example if you
-   have problems running the command. The `USUAL_JAVADOC_OPTIONS_HERE` part might be replaced with
-   options like `-d doc`, `-sourcepath src`, `-subpackages cs1302`, etc., as usual. Here is the
-   example:
-
-   ```
-   $ javadoc1302 --StringList.java \
-     USUAL_JAVADOC_OPTIONS_HERE \
-     -classpath cs1302-str-list.jar \
-     -link https://docs.oracle.com/en/java/javase/17/docs/api/
-   ```
-
-   **NOTE:** The command presented above is a mult-line command since it's so long. There is a single
-   space before the `\` at the end of the first two lines. When typing this out, you should type a
-   single space followed by `\`, then immediately press your `RET` key to continue to the next line.
-   If typed correctly, you will see a `>` on the next line and you can continue typing the command.
-   The `\` and `>` characters will NOT be part of the command when you do your final press of the
-   `RET` key.
-
-   //-->
 
    **SUGGESTION:** <a id="javadoc-comments"> **Do NOT manually copy the entire comment and parameter details from the API website.**
    Instead, include a summary sentence and `{@inheritDoc}` to make it clear to readers of the source
