@@ -15,9 +15,9 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The
 late penalty does not start applying until after the final date listed.
 
-* **MON 2023-03-27 (Mar 27) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **TUE 2023-03-28 (Mar 28) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **WED 2023-03-29 (Mar 29) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **THU 2023-03-30 (Mar 30) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **FRI 2023-03-31 (Mar 31) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **SUN 2023-04-02 (Apr 2) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
@@ -97,7 +97,7 @@ for the [`UrgencyQueue` interface](https://cs1302uga.github.io/cs1302-urgency-qu
 Implementors should make sure that each method functions or behaves as described
 by the interface's API documentation.
 
-Implementors are always free to implement additional methods in addition
+Implementors are free to implement additional methods in addition
 to the ones defined by the interface. However, they should not assume that
 users (e.g., graders) will use these additional methods (even if declared with
 `public` visibility), since they are not defined in the interface. These additional
@@ -109,7 +109,7 @@ contains some suggestions on how to work through the project from start to finis
 
 ### Required Prerequisite Reading
 
-* [1302 Generic Classes Reading] (https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/generics/generic-classes/generic-classes.md)
+* [1302 Generic Classes Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/generics/generic-classes/generic-classes.md)
 * [1302 Generic Methods Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/generics/generic-methods/generic-methods.md)
 * [1302 Lambda Expressions Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/lambda/lambda.rst)
 * [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html)
@@ -136,7 +136,7 @@ code for classes in `cs1302.gen`. However, you do have access to the _byte code_
 documentation website. You will need to use both `UrgencyQueue` and `Node` in your code since 
 `BaseLinkedUrgencyQueue` depends on `UrgencyQueue` and `Node`.
 
-<img alt="UML Diagram" src="ProjectDiagram.svg" align="center">
+<img alt="UML Diagram" src="UrgencyQueue.svg" align="center">
 
 The specific requirements for each class are presented below (See the [Suggested Checklist](#appendix---suggested-checklist)
 for the suggested order of implementation).
@@ -164,7 +164,7 @@ for the suggested order of implementation).
     [`Comparable` Upper Bound](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparable) 
     so that it can compare items. Since each item is compatible with the generic type parameter, `Type`, and `Type` is 
     required to implement `Comparable<Type>`, this class is able to directly determine the relative level of urgency 
-    between two items using the natural ordering defined by the item type's compareTo(Type) method.
+    between two items using the natural ordering defined by the item type's `compareTo(Type)` method.
     
   * The starter code for `LinkedUrgencyQueue` contains the class declaration and along with the signature for the default 
     constructor. You are not allowed to change the class declaration or the signature of the constructor.
