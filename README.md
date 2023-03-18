@@ -172,7 +172,7 @@ for the suggested order of implementation).
     Here is the class declaration:
     
     ```java
-    public class LinkedUrgencyQueue<Type extends Comparable<Type>> implements UrgencyQueue<Type> {
+    public class LinkedUrgencyQueue<Type extends Comparable<Type>> extends BaseLinkedUrgencyQueue<Type> {
     ```
     
     Here is the signature for the constructor:
@@ -201,7 +201,7 @@ for the suggested order of implementation).
     Here is the class declaration:
     
     ```java
-    public class CustomLinkedUrgencyQueue<Type> implements UrgencyQueue<Type> {
+    public class CustomLinkedUrgencyQueue<Type> extends BaseLinkedUrgencyQueue<Type> {
     ```
     
     Here is the signature for the constructor:
