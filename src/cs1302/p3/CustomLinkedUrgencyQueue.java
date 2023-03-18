@@ -2,7 +2,7 @@ package cs1302.p3;
 
 import cs1302.gen.UrgencyQueue;
 
-public class CustomLinkedUrgencyQueue<Type> implements UrgencyQueue<Type> {
+public class CustomLinkedUrgencyQueue<Type> extends BaseLinkedUrgencyQueue<Type> {
 
     /**
      * Construct a {@code CustomLinkedUrgencyQueue}.
