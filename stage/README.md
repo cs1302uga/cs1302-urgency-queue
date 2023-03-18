@@ -386,7 +386,7 @@ You will be submitting your project via Odin before the deadline indicated
 near the top of this document. Make sure your project files
 are on `odin.cs.uga.edu`. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document,
-then the name of your project directory is likely `cs1302-str-list`.
+then the name of your project directory is likely `cs1302-urgency-queue`.
 While in your project's parent directory, execute the following command:
 
 ```
