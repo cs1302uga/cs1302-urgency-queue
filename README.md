@@ -15,8 +15,11 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The
 late penalty does not start applying until after the final date listed.
 
-* **THU 2023-03-30 (Mar 30) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **FRI 2023-03-31 (Mar 31) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* ~~**THU 2023-03-30 (Mar 30) @ 11:55 PM EST (`+10` SB Extra Credit)**~~
+* ~~**FRI 2023-03-31 (Mar 31) @ 11:55 PM EST (`+5` SB Extra Credit)**~~
+
+* **FRI 2023-03-31 (Mar 31) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **SAT 2023-04-01 (Apr 1) @ 11:55 PM EST (`+5` SB Extra Credit)**
 * **SUN 2023-04-02 (Apr 2) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
@@ -487,7 +490,7 @@ of steps that you may need to take to complete the project.
 
      ```java
      public static void testSize() {
-        Queue<Integer> queue = new LinkedUrgencyQueue<Integer>();
+        UrgencyQueue<Integer> queue = new LinkedUrgencyQueue<Integer>();
         // Testing size on an empty queue
         if (queue.size() == 0) {
             System.out.println("size: Test Passed");
