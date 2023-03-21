@@ -7,8 +7,6 @@ public class LinkedUrgencyQueue<Type extends Comparable<Type>>
 
     /**
      * Construct a {@code LinkedUrgencyQueue}.
-     *
-     * @throws NullPointerException if {@code cmp} is {@code null}
      */
     public LinkedUrgencyQueue() {
         super();
