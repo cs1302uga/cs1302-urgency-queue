@@ -132,9 +132,7 @@ Points are assigned for each test case that executes properly.
 For this project, you are required to create two different classes that
 implement the same interface via a common abstract parent. While the specific
 details are listed later in this document, the following diagram illustrates the
-general relationship between your classes and the interface. **NOTE:** It's a little hard to see, but the
-instance variables of the `BaseLinkedUrgencyQueue` class are package private (not private).
-The package `cs1302.gen`
+general relationship between your classes and the interface. The package `cs1302.gen`
 is provided for you in the `cs1302-urgency-queue.jar` file which is included in the download for the
 project (details later). You do not have access to the source
 code for classes in `cs1302.gen`. However, you do have access to the _byte code_ and the API
