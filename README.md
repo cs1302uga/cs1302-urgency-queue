@@ -18,9 +18,9 @@ late penalty does not start applying until after the final date listed.
 * ~~**THU 2023-03-30 (Mar 30) @ 11:55 PM EST (`+10` SB Extra Credit)**~~
 * ~~**FRI 2023-03-31 (Mar 31) @ 11:55 PM EST (`+5` SB Extra Credit)**~~
 
-* **FRI 2023-03-31 (Mar 31) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2023-04-01 (Apr 1) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **SUN 2023-04-02 (Apr 2) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **MON 2023-04-03 (Apr 3) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **TUE 2023-04-04 (Apr 4) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **WED 2023-04-05 (Apr 5) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
