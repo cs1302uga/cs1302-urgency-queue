@@ -405,7 +405,7 @@ post to your instructor via the course Piazza as soon as possible. However,
 creating a post about something like this the day or night the project is due
 is probably not the best idea.
 
-# Appendix - Project Checklist
+# Appendix - Suggested Checklist
 
 To help you with planning out this project, here are some suggested steps you
 can take that your instructors believe will help you complete the project more
