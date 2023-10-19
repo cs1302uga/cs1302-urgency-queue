@@ -4,8 +4,8 @@
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
-This document contains the description for the Urgency Queue
-project assigned to the students in the Spring 2023 CSCI 1302 classes
+This document contains the description of the Urgency Queue
+project assigned to the students in the Fall 2023 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -36,7 +36,7 @@ late penalty does not start applying until after the final date listed.
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
 * [Appendix - Suggested Checklist](#appendix---suggested-checklist)
-* [Appendix - FAQ](#appendix---faq)
+* [Appendix - FAQ](#appendix--faq)
 
 ## Course-Specific Learning Outcomes
 
@@ -50,7 +50,7 @@ late penalty does not start applying until after the final date listed.
 * **LO2.e:** Utilize existing generic methods, interfaces, and classes in a software solution.
 * **LO3.a:** Create and update source code that adheres to established style guidelines.
 * **LO3.b:** Create class, interface, method, and inline documentation that satisfies a set of requirements.
-* **LO4.a:** Design, create and use interfaces in a software solution.
+* **LO4.a:** Design, create, and use interfaces in a software solution.
 * **LO4.b:** Utilize interface-based polymorphism in a software solution.
 * **LO4.c:** (Partial) Design, create and use inheritance relationships in a software solution.
 * **LO7.c:** Use common abstract data types and structures, including lists, queues, arrays, and stacks in solving
@@ -70,7 +70,7 @@ to the copyright notice and licensing information at the bottom of this document
 
 If there has been an update and you have already cloned the project to Odin,
 then you can update your copy of the project using the <code>$ git pull</code>
-command while inside of your project directory.
+command while inside your project directory.
 
 ## Project Description
 
@@ -93,7 +93,7 @@ parent class.
 For this project, you will *NOT* have access to the `.java` files for the
 interface. Instead, you will have access to the generated API documentation
 for the [`UrgencyQueue` interface](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html)
-(may require VPN connection to view).
+(may require a VPN connection to view).
 Implementors should make sure that each method functions or behaves as described
 by the interface's API documentation.
 
@@ -144,12 +144,12 @@ for the suggested order of implementation).
 * **`BaseLinkedUrgencyQueue`:** Create the abstract `cs1302.p3.BaseLinkedUrgencyQueue` class such that it properly
   implements a subset of the abstract methods in the `UrgencyQueue` interface. Since `BaseLinkedUrgencyQueue` is abstract, it is
   not mandatory to implement all methods of `UrgencyQueue` within this class. The exact list of methods this class
-  must implement are listed in the method section for `BaseLinkedUrgencyQueue` in the provided UML diagram above.
+  must implement is in the method section for `BaseLinkedUrgencyQueue` in the provided UML diagram above.
   Since both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` use a linked list data structure, it is appropriate
   to have `head` as an instance variable of the `BaseLinkedUrgencyQueue` class.
 
   * **Note:** The methods that are listed in the UML diagram in `BaseLinkedUrgencyQueue` must be implemented
-    in that class. You are not allowed to move any of them into either of the chld classes.
+    in that class. You are not allowed to move any of them into either of the child classes.
     You may, however, find that you can more one or more methods from `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`
     up into `BaseLinkedUrgencyQueue`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
     move up only has to be written once! However, accomplishing this will require some thought. We hope that
@@ -166,7 +166,7 @@ for the suggested order of implementation).
     required to implement `Comparable<Type>`, this class is able to directly determine the relative level of urgency 
     between two items using the natural ordering defined by the item type's `compareTo(Type)` method.
     
-  * The starter code for `LinkedUrgencyQueue` contains the class declaration and along with the signature for the default 
+  * The starter code for `LinkedUrgencyQueue` contains the class declaration along with the signature for the default 
     constructor. You are not allowed to change the class declaration or the signature of the constructor.
     
     Here is the class declaration:
@@ -188,14 +188,14 @@ for the suggested order of implementation).
   that it properly extends `cs1302.p3.BaseLinkedUrgencyQueue` and fully implements
   the `cs1302.gen.UrgencyQueue` interface with additional requirements listed below.
 
-  * The `CustomLinkedUrgencyQueue` implementation of `UrgencyQueue` uses a lnked list of `Node` objects to maintain its
+  * The `CustomLinkedUrgencyQueue` implementation of `UrgencyQueue` uses a linked list of `Node` objects to maintain its
     queue ("line") of items and requires a 
     [Comparator Constructor Parameter](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparator) 
     so that it can compare items. Although the generic type parameter, `Type`, does not have any explicit upper-bound 
     requirements, this class is still able to determine the relative level of urgency between two items using the 
     ordering imposed by the comparator supplied to the constructor (i.e., it uses comparator's `compare(Type, Type)` method).
   
-  * The starter code for `CustomLinkedUrgencyQueue` contains the class declaration and along with the signature for the 
+  * The starter code for `CustomLinkedUrgencyQueue` contains the class declaration along with the signature for the 
     one-parameter constructor. You are not allowed to change the class declaration or the signature of the constructor.
     
     Here is the class declaration:
@@ -237,7 +237,7 @@ point total. That is, they are all or nothing.
   as defined in the [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide).
   All of the individual code style guidelines listed in that document are part
   of this single non-functional requirement. If `check1302` on Odin reports any
-  style volatons for your submission, then 5 points will be subtracted from your
+  style violations for your submission, then 5 points will be subtracted from your
   earned point total **for each violation**, up to a maximum deduction of 20 points.
 
   **NOTE:** The [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide)
@@ -312,7 +312,7 @@ made to modify your submission to evaluate other requirements.
 * **No Implementation Dependencies:** <a id="no-impl-deps"/>You are not permitted to use one
   implementation of the `UrgencyQueue` interface in another implementation.
   For example, you cannot use the `LinkedUrgencyQueue` class inside of your
-  `CustomLinkedUrgencyQueue` class or vise versa. Additionally, `BaseLinkedUrgencyQueue`
+  `CustomLinkedUrgencyQueue` class or vice versa. Additionally, `BaseLinkedUrgencyQueue`
   cannot depend on either of its children, however,
   it can (and should) depend on the `UrgencyQueue` interface itself. If you have any
   questions about this, then please ask your instructor.
@@ -345,7 +345,7 @@ via interface polymorphism.
 ## How to Download the Project
 
 On Odin, execute the following terminal command in order to download the project
-files into sub-directory within your present working directory:
+files into a sub-directory within your present working directory:
 
 ```
 $ git clone --depth 1 https://github.com/cs1302uga/cs1302-urgency-queue.git
@@ -353,7 +353,7 @@ $ git clone --depth 1 https://github.com/cs1302uga/cs1302-urgency-queue.git
 
 This should create a directory called `cs1302-urgency-queue` in
 your present working directory that contains a clone of the
-project's respository. Take a look around.
+project's repository. Take a look around.
 
 If any updates to the project files are announced by your instructor, you can
 merge those changes into your copy by changing into your project's directory
@@ -369,15 +369,15 @@ your instructor.
 ## UrgencyQueue Testing
 
 You are responsible for implementing test cases to test your `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` classes. There are
-a few examples of test cases provided in the 
+a few examples of test cases are provided in the 
 [`UrgencyQueue` API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html).
 
-Additionally, we have provided oracle classes for both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` that you can 
-instantiate and use in your driver program. The oracle will allow you to run test cases that you write using a trusted 
-implementation of `UrgencyQueue` so you can compare the oracle output to the output of your `UrgencyQueue` implementations.
-  * The oracle implementation of `LinkedUrgencyQueue` is provided in the 
+Additionally, we have provided Oracle classes for both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue` that you can 
+instantiate and use in your driver program. The Oracle will allow you to run test cases that you write using a trusted 
+implementation of `UrgencyQueue` so you can compare the Oracle output to the output of your `UrgencyQueue` implementations.
+  * The Oracle implementation of `LinkedUrgencyQueue` is provided in the 
     [`cs1302.oracle.OracleLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleLinkedUrgencyQueue.html). 
-  * The oracle implementation of `CustomLinkedUrgencyQueue` is provided in the 
+  * The Oracle implementation of `CustomLinkedUrgencyQueue` is provided in the 
     [`cs1302.oracle.OracleCustomLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleCustomLinkedUrgencyQueue.html). 
 
 ## Submission Instructions
@@ -412,7 +412,7 @@ can take that your instructors believe will help you complete the project more
 easily. Some of the items in this checklist may not make sense until you have
 read the entire project description, including the 
 [API Documentation](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html).
-These steps are suggesions and, therefore, do not constitute an exhaustive list
+These steps are suggestions and, therefore, do not constitute an exhaustive list
 of steps that you may need to take to complete the project.
 
 1. Preparation (Suggested Deadline: Saturday, October 21st. 12 days before the deadline):
@@ -442,12 +442,12 @@ of steps that you may need to take to complete the project.
 	   a note to refer to that method. If that other method does not yet exist,
 	   then you might introduce that as a _private_ or _protected_ helper method.
 	   Using existing methods can greatly cut down the amount of code you need
-	   to write and will minimize the number of bugs in your code.
+	   to write and minimize the number of bugs in your code.
    - [ ] Based on the previous suggestion, draw out what the method dependencies
          are for each method (i.e., what method depends on what). If you notice
 	 any circular dependencies, then those should be eliminated.
 	 * The methods that don't depend on other methods are good candidates to
-	   start with in the next phase of your development. We'll call these the
+	   start within the next phase of your development. We'll call these the
 	   independent methods.
 
 1. Prepare to implement the methods (Suggested Deadline: Tuesday, October 24th. 9 days before the deadline):
@@ -466,7 +466,7 @@ of steps that you may need to take to complete the project.
 	   compilation in the future. This will make it easier to test/debug your code.
    - [ ] Create a class called `cs1302.test.QueueTester` and add any code snippets found in the API documentation for the `cs1302.gen` package.
          Place each code snippet in its own method with an appropriate name. Then, create a `main` method in `QueueTester` that calls
-	 the methods you just created. If everything is set up properly, all of the tests should pass because the oracle code provides working
+	 the methods you just created. If everything is set up properly, all of the tests should pass because the Oracle code provides working
 	 implementations of the `UrgencyQueue` interface. Now, you will have your testing environment set up and you will be able to 
 	 seamlessly plug in your implementations of `UrgencyQueue` to test the functionality.
 	 
@@ -475,13 +475,13 @@ of steps that you may need to take to complete the project.
    
    At this point, you should have the complete environment set up with templates for each class you will implement (`LinkedUrgencyQueue` and
    `CustomLinkedUrgencyQueue`) along with a simple tester program. If you take the first three checkpoints seriously, then you will be able to:
-      * write less code for each method and over all;
+      * write less code for each method and overall;
       * identify and fix bugs faster;
       * not have to go back and fix as many style errors and/or comments; and
       * have a better understanding of how your class works.
 
 1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Wednesday, October 25th. 8 days before the deadline):
-   - [ ] Begin with `size`. Since this methods is inherited by the children, we won't need to write
+   - [ ] Begin with `size`. Since this method is inherited by the children, we won't need to write
      it in the child classes! Now, go ahead and add the method called `testSize()` to your `QueueTester` class and 
      call it from the `main` method. The code for these methods should look something like the code below:
 
@@ -509,7 +509,7 @@ of steps that you may need to take to complete the project.
      modifications before moving to the next method.**
 
 1. Implement the methods in the order they are listed below (Suggested Deadline: Friday, October 27th. 6 days before the deadline):
-   **check the method detail section for hints and more details about each method before implementing**
+   **Check the method detail section for hints and more details about each method before implementing**
    
    - [ ] `BaseLinkedUrgencyQueue`: constructor, `size`, and `peek`
    - [ ] `LinkedUrgencyQueue`: constructor and `enqueue`
@@ -524,11 +524,11 @@ of steps that you may need to take to complete the project.
 
 1. Complete `BaseLinkedUrgencyQueue` (Suggested Deadline: Saturday, October 28th. 5 days before the deadline):
    - [ ] implement the remaining methods in the order they are presented in the UML diagram above.
-   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving onto the next).
+   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
 1. Complete `LinkedUrgencyQueue` (Suggested Deadline: Monday, October 30th. 3 days before the deadline):
    - [ ] implement the remaining methods in the order they are presented in the UML diagram above. 
-   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving onto the next).
+   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
 1. Implement `CustomLinkedUrgencyQueue` (Suggested Deadline: Wednesday, November 1st. 1 day before the deadline):
    - [ ] Write the code for the constructor.
@@ -536,13 +536,25 @@ of steps that you may need to take to complete the project.
          * When it comes time to write tests, if your test methods operate on an `UrgencyQueue` variable, then
 	   there is probably very little, if any, changes that you need to make in order to test the methods in 
 	   this class.
-   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving onto the next).
+   - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
 1. Final Run-through (Suggested Deadline: Friday, November 3rd. 0 days before the deadline):
    - [ ] Thoroughly test all of your methods on objects of both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
    - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
-         the checkstyle audit.
+         the `checkstyle` audit.
+
+# Appendix - FAQ
+
+Below are some frequently asked questions related to this project.
+
+1. **<a id="java-util-Arrays"/>Is the `java.util.Arrays` class allowed?**
+
+   **No**, this violates [a requirement](#no-java-util-arrays); instead, you should write your
+   own version of the method you want to use. Most of the methods that you think you might need
+   from that class can be written in 6 lines of code or less (often much less), and writing your
+   own version will serve as some much-needed practice.
+
 
 **We very much appreciate any and all feedback you might have for this section.**
 Please don't hesitate to send us a private Piazza message with suggestions on
