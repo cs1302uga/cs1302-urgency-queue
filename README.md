@@ -36,7 +36,7 @@ late penalty does not start applying until after the final date listed.
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
 * [Appendix - Suggested Checklist](#appendix---suggested-checklist)
-* [Appendix - FAQ](#appendix--faq)
+* [Appendix - FAQ](#appendix---faq)
 
 ## Course-Specific Learning Outcomes
 
@@ -100,7 +100,7 @@ by the interface's API documentation.
 Implementors are free to implement additional methods in addition
 to the ones defined by the interface. However, they should not assume that
 users (e.g., graders) will use these additional methods (even if declared with
-`public` visibility), since they are not defined in the interface. These additional
+`public` visibility) since they are not defined in the interface. These additional
 methods may help avoid redundancy and promote code reuse within an implementation.
 
 Based on discussions with past students, we have prepared a
