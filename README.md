@@ -150,7 +150,7 @@ for the suggested order of implementation).
 
   * **Note:** The methods that are listed in the UML diagram in `BaseLinkedUrgencyQueue` must be implemented
     in that class. You are not allowed to move any of them into either of the child classes.
-    You may, however, find that you can more one or more methods from `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`
+    You may, however, find that you can move one or more methods from `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`
     up into `BaseLinkedUrgencyQueue`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
     move up only has to be written once! However, accomplishing this will require some thought. We hope that
     all of you spend some time trying to move additional methods up to `BaseLinkedUrgencyQueue`.
