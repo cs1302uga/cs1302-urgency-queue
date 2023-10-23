@@ -376,9 +376,9 @@ Additionally, we have provided Oracle classes for both `LinkedUrgencyQueue` and 
 instantiate and use in your driver program. The Oracle will allow you to run test cases that you write using a trusted 
 implementation of `UrgencyQueue` so you can compare the Oracle output to the output of your `UrgencyQueue` implementations.
   * The Oracle implementation of `LinkedUrgencyQueue` is provided in the 
-    [`cs1302.oracle.OracleLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleLinkedUrgencyQueue.html). 
+    `cs1302.oracle.OracleLinkedUrgencyQueue` class. 
   * The Oracle implementation of `CustomLinkedUrgencyQueue` is provided in the 
-    [`cs1302.oracle.OracleCustomLinkedUrgencyQueue` class](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/oracle/OracleCustomLinkedUrgencyQueue.html). 
+    `cs1302.oracle.OracleCustomLinkedUrgencyQueue` class. 
 
 ## Submission Instructions
 
