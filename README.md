@@ -52,7 +52,7 @@ late penalty does not start applying until after the final date listed.
 * **LO3.b:** Create class, interface, method, and inline documentation that satisfies a set of requirements.
 * **LO4.a:** Design, create, and use interfaces in a software solution.
 * **LO4.b:** Utilize interface-based polymorphism in a software solution.
-* **LO4.c:** (Partial) Design, create and use inheritance relationships in a software solution.
+* **LO4.c:** (Partial) Design, create, and use inheritance relationships in a software solution.
 * **LO7.c:** Use common abstract data types and structures, including lists, queues, arrays, and stacks in solving
   typical problems.
 
@@ -94,10 +94,10 @@ For this project, you will *NOT* have access to the `.java` files for the
 interface. Instead, you will have access to the generated API documentation
 for the [`UrgencyQueue` interface](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html)
 (may require a VPN connection to view).
-Implementors should make sure that each method functions or behaves as described
+Implementers should make sure that each method functions or behaves as described
 by the interface's API documentation.
 
-Implementors are free to implement additional methods in addition
+Implementers are free to implement additional methods in addition
 to the ones defined by the interface. However, they should not assume that
 users (e.g., graders) will use these additional methods (even if declared with
 `public` visibility) since they are not defined in the interface. These additional
@@ -162,7 +162,7 @@ for the suggested order of implementation).
   * The `LinkedUrgencyQueue` implementation of `UrgencyQueue` uses a linked list of `Node` objects to maintain its 
     queue ("line") of items and imposes a 
     [`Comparable` Upper Bound](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparable) 
-    so that it can compare items. Since each item is compatible with the generic type parameter, `Type`, and `Type` is 
+    so that it can compare items. Since each item is compatible with the generic type parameter `Type`, and `Type` is 
     required to implement `Comparable<Type>`, this class is able to directly determine the relative level of urgency 
     between two items using the natural ordering defined by the item type's `compareTo(Type)` method.
     
@@ -191,7 +191,7 @@ for the suggested order of implementation).
   * The `CustomLinkedUrgencyQueue` implementation of `UrgencyQueue` uses a linked list of `Node` objects to maintain its
     queue ("line") of items and requires a 
     [Comparator Constructor Parameter](https://cs1302uga.github.io/cs1302-urgency-queue/cs1302uga.gen/cs1302/gen/UrgencyQueue.html#order-comparator) 
-    so that it can compare items. Although the generic type parameter, `Type`, does not have any explicit upper-bound 
+    so that it can compare items. Although the generic type parameter `Type` does not have any explicit upper-bound 
     requirements, this class is still able to determine the relative level of urgency between two items using the 
     ordering imposed by the comparator supplied to the constructor (i.e., it uses comparator's `compare(Type, Type)` method).
   
@@ -231,7 +231,7 @@ point total. That is, they are all or nothing.
   is not appropriate for this assignment. However, static constants are
   perfectly fine.
   
-  * **(20 points) Code Style Guidelines<a id="style"/>:** You should be consistent with the style
+  * **(20 points) Code Style Guidelines:** You should be consistent with the style
   aspect of your code in order to promote readability. Every `.java` file that
   you include as part of your submission for this project must be in valid style
   as defined in the [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide).
@@ -329,7 +329,7 @@ made to modify your submission to evaluate other requirements.
   are also NOT allowed to use the `java.util.Arrays` class. For more
   information on why, please read [this FAQ item](#java-util-Arrays). You
   can also check for the presence of this dependency using `jdeps` as described
-  in an earlier requirement -- you don't want to see `java.util.Arrays` anywhere
+  in an earlier requirement — you don't want to see `java.util.Arrays` anywhere
   in the output.
 
   **NOTE:** The `System.arraycopy` method is in the `System` class and not
@@ -386,7 +386,7 @@ You will be submitting your project via Odin before the deadline indicated
 near the top of this document. Make sure your project files
 are on `odin.cs.uga.edu`. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document,
-then the name of your project directory is likely `cs1302-urgency-queue`.
+then the name of your project directory should be `cs1302-urgency-queue`.
 While in your project's parent directory, execute the following command:
 
 ```
