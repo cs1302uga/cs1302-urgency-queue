@@ -265,14 +265,18 @@ made to modify your submission to evaluate other requirements.
   `cs1302-urgency-queue` called `src`. When the project is compiled,
   the `-d` option should be used with `javac` to make the default package
   for compiled code a direct subdirectory of `cs1302-urgency-queue`
-  called `bin`.
+  called `bin`. The following options are also required for this project:
+
+  - `-Xlint:rawTypes`
+  - `-Xlint:unchecked`
+  - `-Werror`  
 
   If you follow this structure, then you would type the following to compile
   `BaseLinkedUrgencyQueue.java` to the `bin` directory, assuming you are in the top-level project
   directory `cs1302-urgency-queue`:
 
   ```
-  $ javac -d bin -cp cs1302-urgency-queue.jar src/cs1302/p3/BaseLinkedUrgencyQueue.java
+  $ javac -Xlint:rawTypes -Xlint:unchecked -Werror -d bin -cp cs1302-urgency-queue.jar src/cs1302/p3/BaseLinkedUrgencyQueue.java
   ```
 
   Remember, when you compile `.java` files individually, there might be
@@ -285,8 +289,8 @@ made to modify your submission to evaluate other requirements.
   both to be on the classpath as follows:
 
   ```
-  $ javac -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/LinkedUrgencyQueue.java
-  $ javac -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/CustomLinkedUrgencyQueue.java
+  $ javac -Xlint:rawTypes -Xlint:unchecked -Werror -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/LinkedUrgencyQueue.java
+  $ javac -Xlint:rawTypes -Xlint:unchecked -Werror -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/CustomLinkedUrgencyQueue.java
   ```
   
 * __Development Environment:__ This project must *must compile and run* 
@@ -383,8 +387,13 @@ implementation of `UrgencyQueue` so you can compare the Oracle output to the out
 ## Submission Instructions
 
 You will be submitting your project via Odin before the deadline indicated
-near the top of this document. Make sure your project files
-are on `odin.cs.uga.edu`. Change into the parent directory of your
+near the top of this document. 
+
+Before you attempt to submit your project, it is very important that you make sure it
+compiles without errors and warnings using the specific `javac` commands mentioned earlier
+in this project description.
+
+Make sure your project files are on `odin.cs.uga.edu`. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document,
 then the name of your project directory should be `cs1302-urgency-queue`.
 While in your project's parent directory, execute the following command:
