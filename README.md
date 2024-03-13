@@ -267,7 +267,7 @@ made to modify your submission to evaluate other requirements.
   for compiled code a direct subdirectory of `cs1302-urgency-queue`
   called `bin`. The following options are also required for this project:
 
-  - `-Xlint:rawTypes`
+  - `-Xlint:rawtypes`
   - `-Xlint:unchecked`
   - `-Werror`  
 
@@ -276,7 +276,7 @@ made to modify your submission to evaluate other requirements.
   directory `cs1302-urgency-queue`:
 
   ```
-  $ javac -Xlint:rawTypes -Xlint:unchecked -Werror -d bin -cp cs1302-urgency-queue.jar src/cs1302/p3/BaseLinkedUrgencyQueue.java
+  $ javac -Xlint:rawtypes -Xlint:unchecked -Werror -d bin -cp cs1302-urgency-queue.jar src/cs1302/p3/BaseLinkedUrgencyQueue.java
   ```
 
   Remember, when you compile `.java` files individually, there might be
@@ -289,8 +289,8 @@ made to modify your submission to evaluate other requirements.
   both to be on the classpath as follows:
 
   ```
-  $ javac -Xlint:rawTypes -Xlint:unchecked -Werror -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/LinkedUrgencyQueue.java
-  $ javac -Xlint:rawTypes -Xlint:unchecked -Werror -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/CustomLinkedUrgencyQueue.java
+  $ javac -Xlint:rawtypes -Xlint:unchecked -Werror -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/LinkedUrgencyQueue.java
+  $ javac -Xlint:rawtypes -Xlint:unchecked -Werror -cp bin:cs1302-urgency-queue.jar -d bin src/cs1302/p3/CustomLinkedUrgencyQueue.java
   ```
   
 * __Development Environment:__ This project must *must compile and run* 
