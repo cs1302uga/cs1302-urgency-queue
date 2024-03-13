@@ -260,7 +260,7 @@ it will result in an immediate zero for the assignment. In many cases, a violati
 will prevent the graders from evaluating your functional requirements. No attempts will be
 made to modify your submission to evaluate other requirements.
 
-* **Project Directory Structure:** <a id="struct"></a>The location of the default
+* **Project Directory Structure & Compilation:** <a id="struct"></a>The location of the default
   package for the source code should be a direct subdirectory of
   `cs1302-urgency-queue` called `src`. When the project is compiled,
   the `-d` option should be used with `javac` to make the default package
