@@ -109,9 +109,8 @@ contains some suggestions on how to work through the project from start to finis
 
 ### Required Prerequisite Reading
 
-* [1302 Generic Classes and Introduction Reading Chapters 10.1-10.4](https://cs1302uga.github.io/cs1302-book/java/generics/generics-index.html)
-* [1302 Generic Methods Reading Chapters 10.5-10.7](https://cs1302uga.github.io/cs1302-book/java/generics/generics-index.html)
-* [1302 Lambda Expressions Reading](https://cs1302uga.github.io/cs1302-book/index.html)
+* [1302 TextBook Chapter: Generics](https://cs1302uga.github.io/cs1302-book/java/generics/generics-index.html)
+* [1302 TextBook Chapter: Lambda Expressions](https://cs1302uga.github.io/cs1302-book/index.html)
 * [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html)
 * [`java.util.function.Consumer` Interface Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html)
 
