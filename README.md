@@ -1,11 +1,11 @@
 # CSCI 1302 - Urgency Queue v2024.fa
 
-![Approved for: Spring 2024](https://img.shields.io/badge/Approved%20for-Spring%202024-blue)
+![Approved for: Fall 2024](https://img.shields.io/badge/Approved%20for-Fall%202024-green)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
 This document contains the description of the Urgency Queue
-project assigned to the students in the Spring 2024 CSCI 1302 classes
+project assigned to the students in the Fall 2024 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
