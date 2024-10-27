@@ -12,10 +12,10 @@ at the University of Georgia.
 
 There are different deadline options for this project. Students who
 perform their final submission via the `submit` command before the date/times listed
-below automatically receive the associated Submission-Based (SB) extra credit. The
-late penalty does not start applying until after the final date listed.
+below automatically receive the associated Submission-Based (SB) extra credit. 
+~~The late penalty does not start applying until after the final date listed.~~
 
-
+<!--
 * ~**FRI 2024-10-25 (Oct 25) @ 11:55 PM EST (`+10` SB Extra Credit)**~
 * ~**SAT 2024-10-26 (Oct 26) @ 11:55 PM EST (`+5` SB Extra Credit)**~
 * ~**SUN 2024-10-27 (Oct 27) @ 11:55 PM EST (`+0` SB Extra Credit)**~
@@ -23,6 +23,13 @@ late penalty does not start applying until after the final date listed.
 * **FRI 2024-10-25 (Oct 25) @ 11:55 PM EST (`+10` SB Extra Credit)**
 * **SAT 2024-10-26 (Oct 26) @ 11:55 PM EST (`+10` SB Extra Credit)**
 * **SUN 2024-10-27 (Oct 27) @ 11:55 PM EST (`+10` SB Extra Credit)**
+-->
+
+**_An adjustment to the project deadlines and late policy were announced by the course instructors on Oct 27 via [Piazza @681](https://piazza.com/class/lyt3nkz8ncm3i2/post/681):_**
+
+*   **MON 2024-10-28 (Oct 28) @ 11:55 PM EST (`+10` SB Extra Credit)**
+*   **TUE 2024-10-29 (Oct 29) @ 11:55 PM EST (` +0` SB Extra Credit)**
+*   **No late submissions accepted after 11:55:00 PM on TUE Oct 29.**
 
 **Read the entirety of this file before beginning your project.**
 
