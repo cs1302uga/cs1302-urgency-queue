@@ -1,6 +1,6 @@
-# CSCI 1302 - Urgency Queue v2024.fa
+# CSCI 1302 - Urgency Queue v2025.sp
 
-![Approved for: Fall 2024](https://img.shields.io/badge/Approved%20for-Fall%202024-green)
+![Approved for: Spring 2025](https://img.shields.io/badge/Approved%20for-Spring%202025-blue)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
@@ -15,21 +15,9 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. 
 ~~The late penalty does not start applying until after the final date listed.~~
 
-<!--
-* ~**FRI 2024-10-25 (Oct 25) @ 11:55 PM EST (`+10` SB Extra Credit)**~
-* ~**SAT 2024-10-26 (Oct 26) @ 11:55 PM EST (`+5` SB Extra Credit)**~
-* ~**SUN 2024-10-27 (Oct 27) @ 11:55 PM EST (`+0` SB Extra Credit)**~
-
-* **FRI 2024-10-25 (Oct 25) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2024-10-26 (Oct 26) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SUN 2024-10-27 (Oct 27) @ 11:55 PM EST (`+10` SB Extra Credit)**
--->
-
-**_An adjustment to the project deadlines and late policy were announced by the course instructors on Oct 27 via [Piazza @681](https://piazza.com/class/lyt3nkz8ncm3i2/post/681):_**
-
-*   **MON 2024-10-28 (Oct 28) @ 11:55 PM EST (`+10` SB Extra Credit)**
-*   **TUE 2024-10-29 (Oct 29) @ 11:55 PM EST (` +0` SB Extra Credit)**
-*   **No late submissions accepted after 11:55:00 PM on TUE Oct 29.**
+* **FRI 2025-03-21 (Mar 21) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **SAT 2025-03-22 (Mar 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **SUN 2025-03-23 (Mar 23) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
@@ -435,7 +423,7 @@ read the entire project description, including the
 These steps are suggestions and, therefore, do not constitute an exhaustive list
 of steps that you may need to take to complete the project.
 
-1. Preparation (Suggested Deadline: Monday, Oct 14th. 11 days before the deadline):
+1. Preparation (Suggested Deadline: Monday, Mar 10th. 11 days before the deadline):
 
    - [ ] Read through the entire project description, including the appendices,
          and **write down questions as you go**.
@@ -449,7 +437,7 @@ of steps that you may need to take to complete the project.
 	   testing your code, you will replace the oracle type with `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
 
-1. Before you write any code (Suggested Deadline: Tuesday, Oct 15th. 10 days before the deadline):
+1. Before you write any code (Suggested Deadline: Tuesday, Mar 11th. 10 days before the deadline):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what
@@ -470,7 +458,7 @@ of steps that you may need to take to complete the project.
 	   start within the next phase of your development. We'll call these the
 	   independent methods.
 
-1. Prepare to implement the methods (Suggested Deadline: Wednesday, Oct 16th. 9 days before the deadline):
+1. Prepare to implement the methods (Suggested Deadline: Wednesday, Mar 12th. 9 days before the deadline):
 
    - [ ] Create the `.java` files for each implementing class and the common parent (`BaseLinkedUrgencyQueue`) and make sure all classes
          are in the correct package and all entities have the proper visibility. For each file:
@@ -500,7 +488,7 @@ of steps that you may need to take to complete the project.
       * not have to go back and fix as many style errors and/or comments; and
       * have a better understanding of how your class works.
 
-1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Thursday, Oct 17th. 8 days before the deadline):
+1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Thursday, Mar 13th. 8 days before the deadline):
    - [ ] Begin with `size`. Since this method is inherited by the children, we won't need to write
      it in the child classes! Now, go ahead and add the method called `testSize()` to your `QueueTester` class and 
      call it from the `main` method. The code for these methods should look something like the code below:
@@ -528,7 +516,7 @@ of steps that you may need to take to complete the project.
      **Make sure to do one method at a time, fully test it, run `check1302`, and do a proper `git commit` to save your 
      modifications before moving to the next method.**
 
-1. Implement the methods in the order they are listed below (Suggested Deadline: Saturday, Oct 19th. 6 days before the deadline):
+1. Implement the methods in the order they are listed below (Suggested Deadline: Saturday, Mar 15th. 6 days before the deadline):
    **Check the method detail section for hints and more details about each method before implementing**
    
    - [ ] `BaseLinkedUrgencyQueue`: constructor, `size`, and `peek`
@@ -542,15 +530,15 @@ of steps that you may need to take to complete the project.
    This iterative process of testing code is sometimes called _regression testing_. 
    You may need to go back and fix a bug in a method you have already written.
 
-1. Complete `BaseLinkedUrgencyQueue` (Suggested Deadline: Sunday, Oct 20th. 5 days before the deadline):
+1. Complete `BaseLinkedUrgencyQueue` (Suggested Deadline: Sunday, Mar 16th. 5 days before the deadline):
    - [ ] implement the remaining methods in the order they are presented in the UML diagram above.
    - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
-1. Complete `LinkedUrgencyQueue` (Suggested Deadline: Tuesday, Oct 22nd. 3 days before the deadline):
+1. Complete `LinkedUrgencyQueue` (Suggested Deadline: Tuesday, Mar 18th. 3 days before the deadline):
    - [ ] implement the remaining methods in the order they are presented in the UML diagram above. 
    - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
-1. Implement `CustomLinkedUrgencyQueue` (Suggested Deadline: Thursday, Oct 24th. 1 day before the deadline):
+1. Implement `CustomLinkedUrgencyQueue` (Suggested Deadline: Thursday, Mar 20th. 1 day before the deadline):
    - [ ] Write the code for the constructor.
    - [ ] implement the remaining methods in the order they are presented in the UML diagram above.
          * When it comes time to write tests, if your test methods operate on an `UrgencyQueue` variable, then
@@ -558,7 +546,7 @@ of steps that you may need to take to complete the project.
 	   this class.
    - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
-1. Final Run-through (Suggested Deadline: Friday, Oct 25th 0 days before the deadline):
+1. Final Run-through (Suggested Deadline: Friday, Mar 21st 0 days before the deadline):
    - [ ] Thoroughly test all of your methods on objects of both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
    - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
@@ -576,7 +564,7 @@ Below are some frequently asked questions related to this project.
    own version will serve as some much-needed practice.
 
 
-**We very much appreciate any and all feedback you might have for this section.**
+**We very much appreciate any feedback you might have for this section.**
 Please don't hesitate to send us a private Piazza message with suggestions on
 how to make it better after you complete your project.
 
