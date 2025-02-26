@@ -13,7 +13,6 @@ at the University of Georgia.
 There are different deadline options for this project. Students who
 perform their final submission via the `submit` command before the date/times listed
 below automatically receive the associated Submission-Based (SB) extra credit. 
-~~The late penalty does not start applying until after the final date listed.~~
 
 * **FRI 2025-03-21 (Mar 21) @ 11:55 PM EST (`+10` SB Extra Credit)**
 * **SAT 2025-03-22 (Mar 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
