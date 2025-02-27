@@ -15,8 +15,8 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. 
 
 * **FRI 2025-03-21 (Mar 21) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2025-03-22 (Mar 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **SUN 2025-03-23 (Mar 23) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **SUN 2025-03-23 (Mar 23) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **MON 2025-03-24 (Mar 24) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
