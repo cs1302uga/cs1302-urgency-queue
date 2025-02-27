@@ -555,7 +555,7 @@ of steps that you may need to take to complete the project.
 
 Below are some frequently asked questions related to this project.
 
-1. **<a id="java-util-Arrays"/>Is the `java.util.Arrays` class allowed?**
+1. **<a id="java-util-Arrays"/></a>Is the `java.util.Arrays` class allowed?**
 
    **No**, this violates [a requirement](#no-java-util-arrays); instead, you should write your
    own version of the method you want to use. Most of the methods that you think you might need
