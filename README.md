@@ -487,7 +487,7 @@ of steps that you may need to take to complete the project.
       * not have to go back and fix as many style errors and/or comments; and
       * have a better understanding of how your class works.
 
-1. <a id="tests"/>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Thursday, Mar 13th. 8 days before the deadline):
+1. <a id="tests"/></a>Start by implementing a few methods in `BaseLinkedUrgencyQueue` (Suggested Deadline: Thursday, Mar 13th. 8 days before the deadline):
    - [ ] Begin with `size`. Since this method is inherited by the children, we won't need to write
      it in the child classes! Now, go ahead and add the method called `testSize()` to your `QueueTester` class and 
      call it from the `main` method. The code for these methods should look something like the code below:
