@@ -1,4 +1,4 @@
-# CSCI 1302 - Urgency Queue v2025.fa
+# CSCI 1302 - Urgency Queue v2026.sp
 
 ![Approved for: Spring 2026](https://img.shields.io/badge/Approved%20for-Spring%202026-blue)
 
