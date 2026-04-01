@@ -1,18 +1,19 @@
 # CSCI 1302 - Urgency Queue v2025.fa
 
-![Approved for: Fall 2025](https://img.shields.io/badge/Approved%20for-Fall%202025-blue)
+![Approved for: Spring 2026](https://img.shields.io/badge/Approved%20for-Spring%202026-blue)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
 This document contains the description of the Urgency Queue
-project assigned to the students in the Fall 2025 CSCI 1302 classes
+project assigned to the students in the Spring 2026 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
 
 There are different deadline options for this project. Students who
-perform their final submission via the `submit` command before the date/times listed
-below automatically receive the associated Submission-Based (SB) extra credit. 
+perform their final submission via the `submit` command (not `submit1302`)
+before the date/times listed below automatically receive the associated 
+Submission-Based (SB) extra credit. 
 
 * **TUE 2026-04-14 (April 14) @ 11:55 PM EST (`+10` SB Extra Credit)**
 * **WED 2026-04-15 (April 15) @ 11:55 PM EST (`+5` SB Extra Credit)**
@@ -401,7 +402,8 @@ $ check1302 cs1302-urgency-queue/src
 ```
 
 If there are style guide violations, then fix them and retest your code! Once
-you have no style guide violations, you can submit using the following command:
+you have no style guide violations, you can submit using the `submit` command (NOT `submit1302`)
+shown below:
 
 ```
 $ submit cs1302-urgency-queue csci-1302
