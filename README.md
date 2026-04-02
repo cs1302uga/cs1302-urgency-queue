@@ -424,7 +424,7 @@ read the entire project description, including the
 These steps are suggestions and, therefore, do not constitute an exhaustive list
 of steps that you may need to take to complete the project.
 
-1. Preparation (Suggested Deadline: Monday, Oct 13th. 11 days before the deadline):
+1. Preparation (Suggested Deadline: ASAP):
 
    - [ ] Read through the entire project description, including the appendices,
          and **write down questions as you go**.
@@ -438,7 +438,7 @@ of steps that you may need to take to complete the project.
 	   testing your code, you will replace the oracle type with `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
 
-1. Before you write any code (Suggested Deadline: Tuesday, Oct 14th. 10 days before the deadline):
+1. Before you write any code (Suggested Deadline: at least 10 days before the deadline):
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what
@@ -459,7 +459,7 @@ of steps that you may need to take to complete the project.
 	   start within the next phase of your development. We'll call these the
 	   independent methods.
 
-1. Prepare to implement the methods (Suggested Deadline: Wednesday, Oct 15th. 9 days before the deadline):
+1. Prepare to implement the methods (Suggested Deadline: at least 7-9 days before the deadline):
 
    - [ ] Create the `.java` files for each implementing class and the common parent (`BaseLinkedUrgencyQueue`) and make sure all classes
          are in the correct package and all entities have the proper visibility. For each file:
@@ -547,7 +547,7 @@ of steps that you may need to take to complete the project.
 	   this class.
    - [ ] Test, run `checkstyle`, and commit after completing each method (before moving on to the next).
 
-1. Final Run-through (Suggested Deadline: Friday, Oct 24th 0 days before the deadline):
+1. Final Run-through (at least 0-1 days before the deadline):
    - [ ] Thoroughly test all of your methods on objects of both `LinkedUrgencyQueue` and `CustomLinkedUrgencyQueue`.
    - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
    - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
