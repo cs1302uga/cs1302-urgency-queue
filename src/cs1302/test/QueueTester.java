@@ -3,6 +3,8 @@ package cs1302.test;
 import cs1302.gen.UrgencyQueue;
 import cs1302.oracle.OracleCustomLinkedUrgencyQueue;
 import cs1302.oracle.OracleLinkedUrgencyQueue;
+import cs1302.oracle.model.Movie;
+import cs1302.oracle.model.Person;
 import cs1302.p3.CustomLinkedUrgencyQueue;
 import cs1302.p3.LinkedUrgencyQueue;
 import java.util.Comparator;
@@ -33,60 +35,128 @@ public class QueueTester {
     } // QueueTester
 
     /**
-     * Construct a queue for a shared test scenario.
-     * Natural-order modes use {@code compareTo}; custom-order modes use the
-     * supplied comparator. Use {@link Comparator#naturalOrder()} for scenarios
-     * shared by all four modes. Add separate custom-order scenarios as needed.
+     * Determine whether the selected implementation accepts a comparator.
      *
-     * @param <T> the item type for the scenario
-     * @param comparator the ordering to use in custom-order modes
-     * @return a reference to a new queue of the selected implementation
+     * @return whether the selected mode is custom
      */
-    protected <T extends Comparable<T>> UrgencyQueue<T> newQueue(Comparator<T> comparator) {
-        switch (this.implementation) {
-        case "oracle":
-            return new OracleLinkedUrgencyQueue<T>();
-        case "custom-oracle":
-            return new OracleCustomLinkedUrgencyQueue<T>(comparator);
-        case "linked":
-            return new LinkedUrgencyQueue<T>();
-        default:
-            return new CustomLinkedUrgencyQueue<T>(comparator);
-        } // switch
-    } // newQueue
+    private boolean isCustomMode() {
+        return this.implementation.equals("custom-oracle") || this.implementation.equals("custom");
+    } // isCustomMode
 
     /**
-     * Check that a new queue has size zero.
+     * Construct a person queue using natural ordering in every implementation mode.
+     * Person natural ordering compares age first, then name.
+     *
+     * @return a reference to a new person queue
+     */
+    protected UrgencyQueue<Person> newPersonQueue() {
+        switch (this.implementation) {
+        case "oracle":
+            return new OracleLinkedUrgencyQueue<Person>();
+        case "linked":
+            return new LinkedUrgencyQueue<Person>();
+        default:
+            return this.newPersonQueue(Comparator.naturalOrder());
+        } // switch
+    } // newPersonQueue
+
+    /**
+     * Construct a person queue using the supplied comparator in a custom mode.
+     *
+     * @param comparator the ordering to use
+     * @return a reference to a new person queue
+     * @throws IllegalStateException if a natural-order mode is selected
+     * @throws NullPointerException if comparator is null
+     */
+    protected UrgencyQueue<Person> newPersonQueue(Comparator<Person> comparator) {
+        switch (this.implementation) {
+        case "custom-oracle":
+            return new OracleCustomLinkedUrgencyQueue<Person>(comparator);
+        case "custom":
+            return new CustomLinkedUrgencyQueue<Person>(comparator);
+        default:
+            throw new IllegalStateException("A person comparator requires custom-oracle or custom");
+        } // switch
+    } // newPersonQueue
+
+    /**
+     * Construct a movie queue using the supplied comparator in a custom mode.
+     * Movie does not implement Comparable and requires a comparator.
+     *
+     * @param comparator the ordering to use
+     * @return a reference to a new movie queue
+     * @throws IllegalStateException if a natural-order mode is selected
+     * @throws NullPointerException if comparator is null
+     */
+    protected UrgencyQueue<Movie> newMovieQueue(Comparator<Movie> comparator) {
+        switch (this.implementation) {
+        case "custom-oracle":
+            return new OracleCustomLinkedUrgencyQueue<Movie>(comparator);
+        case "custom":
+            return new CustomLinkedUrgencyQueue<Movie>(comparator);
+        default:
+            throw new IllegalStateException("A movie queue requires custom-oracle or custom");
+        } // switch
+    } // newMovieQueue
+
+    /**
+     * Check that a new person queue has size zero.
+     * Use this naming pattern for tests such as testPersonQueuePeek and testPersonQueueEnqueue.
      *
      * @throws AssertionError if the size is incorrect
      */
-    public void testNewQueue() {
-        UrgencyQueue<String> queue = this.<String>newQueue(Comparator.naturalOrder());
+    public void testPersonQueueSize() {
+        UrgencyQueue<Person> queue = this.newPersonQueue();
         int actualSize = queue.size();
         if (actualSize != 0) {
-            throw new AssertionError("new queue size: expected 0, received " + actualSize);
+            throw new AssertionError("new person queue size: expected 0, received " + actualSize);
         } // if
-        System.out.println("PASS: new queue size is 0");
-    } // testNewQueue
+        System.out.println("PASS: new person queue size is 0");
+    } // testPersonQueueSize
 
     /**
-     * Run every test scenario. Add calls here when adding new scenarios.
+     * Check that a new movie queue has size zero.
+     * Use this naming pattern for tests such as testMovieQueuePeek and testMovieQueueEnqueue.
+     *
+     * @throws AssertionError if the size is incorrect
+     * @throws IllegalStateException if a natural-order mode is selected
+     */
+    public void testMovieQueueSize() {
+        UrgencyQueue<Movie> queue = this.newMovieQueue(Movie.Order.byRating());
+        int actualSize = queue.size();
+        if (actualSize != 0) {
+            throw new AssertionError("new movie queue size: expected 0, received " + actualSize);
+        } // if
+        System.out.println("PASS: new movie queue size is 0");
+    } // testMovieQueueSize
+
+    /**
+     * Run each test applicable to the selected implementation.
+     * Add calls here when adding new instance test methods.
      */
     public void testAll() {
-        this.testNewQueue();
+        this.testPersonQueueSize();
+        // Add person tests that use newPersonQueue() here.
+        if (this.isCustomMode()) {
+            this.testMovieQueueSize();
+            // Add movie tests and person tests with custom comparators here.
+        } else {
+            System.out.println("SKIP: movie tests and custom-comparator person tests "
+                + "require custom-oracle or custom.");
+        } // if
     } // testAll
 
     /**
      * Run the tester for the requested implementation.
      *
-     * @param args an optional implementation name; defaults to {@code oracle}
-     * @throws IllegalArgumentException if more than one argument is supplied
+     * @param args exactly one implementation name
+     * @throws IllegalArgumentException if exactly one argument is not supplied
      */
     public static void main(String[] args) {
-        if (args.length > 1) {
-            throw new IllegalArgumentException("Supply at most one implementation name");
+        if (args.length != 1) {
+            throw new IllegalArgumentException("Supply exactly one implementation name");
         } // if
-        String implementation = args.length == 0 ? "oracle" : args[0];
+        String implementation = args[0];
         QueueTester tester = new QueueTester(implementation);
         try {
             tester.testAll();
