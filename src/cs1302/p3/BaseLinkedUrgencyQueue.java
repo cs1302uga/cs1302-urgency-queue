@@ -2,7 +2,7 @@ package cs1302.p3;
 
 import cs1302.gen.UrgencyQueue;
 
-public abstract class BaseLinkedUrgencyQueue<Type> implements UrgencyQueue<Type> {
+public abstract class BaseLinkedUrgencyQueue<ItemType> implements UrgencyQueue<ItemType> {
 
     /**
      * Construct a {@code BaseLinkedUrgencyQueue}. This constructor is never
@@ -13,4 +13,4 @@ public abstract class BaseLinkedUrgencyQueue<Type> implements UrgencyQueue<Type>
         throw new UnsupportedOperationException("constructor: not yet implemented");
     } // BaseLinkedUrgencyQueue
 
-} // BaseLinkedUrgencyQueue<Type>
+} // BaseLinkedUrgencyQueue<ItemType>

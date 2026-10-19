@@ -2,8 +2,8 @@ package cs1302.p3;
 
 import cs1302.gen.UrgencyQueue;
 
-public class LinkedUrgencyQueue<Type extends Comparable<Type>>
-    extends BaseLinkedUrgencyQueue<Type> {
+public class LinkedUrgencyQueue<ItemType extends Comparable<ItemType>>
+    extends BaseLinkedUrgencyQueue<ItemType> {
 
     /**
      * Construct a {@code LinkedUrgencyQueue}.
@@ -13,4 +13,4 @@ public class LinkedUrgencyQueue<Type extends Comparable<Type>>
         throw new UnsupportedOperationException("constructor: not yet implemented");
     } // LinkedUrgencyQueue
 
-} // LinkedUrgencyQueue<Type extends Comparable<Type>>
+} // LinkedUrgencyQueue<ItemType extends Comparable<ItemType>>

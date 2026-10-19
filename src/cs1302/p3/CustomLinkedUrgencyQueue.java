@@ -3,7 +3,7 @@ package cs1302.p3;
 import cs1302.gen.UrgencyQueue;
 import java.util.Comparator;
 
-public class CustomLinkedUrgencyQueue<Type> extends BaseLinkedUrgencyQueue<Type> {
+public class CustomLinkedUrgencyQueue<ItemType> extends BaseLinkedUrgencyQueue<ItemType> {
 
     /**
      * Construct a {@code CustomLinkedUrgencyQueue}.
@@ -12,9 +12,9 @@ public class CustomLinkedUrgencyQueue<Type> extends BaseLinkedUrgencyQueue<Type>
      *     between two items
      * @throws NullPointerException if {@code cmp} is {@code null}
      */
-    public CustomLinkedUrgencyQueue(Comparator<Type> cmp) {
+    public CustomLinkedUrgencyQueue(Comparator<ItemType> cmp) {
         super();
         throw new UnsupportedOperationException("constructor: not yet implemented");
     } // CustomLinkedUrgencyQueue
 
-} // CustomLinkedUrgencyQueue<Type>
+} // CustomLinkedUrgencyQueue<ItemType>
