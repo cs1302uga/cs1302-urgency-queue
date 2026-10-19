@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cd "$(dirname -- "${BASH_SOURCE[0]}")"
 
 JAVAC_OPTIONS="--release 25 -g -d bin -cp cs1302-urgency-queue.jar:bin -Xlint:rawtypes -Xlint:unchecked -Werror"
